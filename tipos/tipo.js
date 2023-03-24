@@ -56,3 +56,22 @@ let usuario = {
     nome: "João",
     idade: 31
 };
+// Union
+let nota = 10;
+// Never - Não vai ter um valor final. Ex: vai retornar um erro
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: 'Sabão',
+    preco: -1,
+    validarProduto() {
+        if (this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Precisa ter um preço!');
+        }
+    }
+};
+// produto.validarProduto()
