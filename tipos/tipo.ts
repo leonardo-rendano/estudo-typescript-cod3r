@@ -59,6 +59,7 @@ const teste = function (a: number, b: number): boolean {
   return false
 }
 
+
 // tipo função
 let calculo: (numA: number, numB: number) => number
 calculo = multiplicar
