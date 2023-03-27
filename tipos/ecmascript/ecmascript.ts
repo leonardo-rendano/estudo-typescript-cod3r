@@ -51,8 +51,20 @@ const [motor, ano] = caracteristicas
 
 // Destructuring (objeto)
 const item = {
-  modelo: "SSD 480GB",
-  preco: 300
+  nome: "SSD 480GB",
+  preco: 300,
+  caracteristicas: {
+    w: 'importado'
+  }
 }
+// Foi passado um ALIAS para a variável nome, pois já havia uma variável declarada com o nome "nome"
+const { nome: n, preco, caracteristicas: { w } } = item
 
-const { modelo, preco } = item
+// Template Strings
+const usuarioID: string = 'SuporteCod3r'
+const notificacoes: string = '19'
+// const boasVindas = 'Boas vindas ' + usuarioID + 'Notificações: ' + notificacoes
+const boasVindas = `
+Boas vindas ${usuarioID}, 
+notificações: ${parseInt(notificacoes) > 9 ? '+9' : notificacoes}
+`
