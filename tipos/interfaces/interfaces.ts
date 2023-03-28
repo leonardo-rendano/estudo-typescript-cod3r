@@ -39,3 +39,30 @@ const meuCliente = new Cliente()
 meuCliente.nome = 'Han'
 saudarComOla(meuCliente)
 meuCliente.saudar('Solo')
+
+
+// Interface Função
+interface FuncaoCalculo {
+  (a: number, b: number): number
+}
+
+let potencia: FuncaoCalculo
+
+potencia = function(base: number, exp: number): number {
+  return Math.pow(base, exp) // Ou base ** exp
+}
+
+// Herança
+
+interface A {
+  a: () => void
+}
+
+interface B {
+  b: () => void
+}
+
+interface ABC extends A, B { 
+  // A interface ABC herdará as props das interfaces A e B e acrescentar a prop C
+  c: () => void
+}
