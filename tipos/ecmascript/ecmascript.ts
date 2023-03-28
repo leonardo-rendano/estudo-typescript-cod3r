@@ -68,3 +68,34 @@ const boasVindas = `
 Boas vindas ${usuarioID}, 
 notificações: ${parseInt(notificacoes) > 9 ? '+9' : notificacoes}
 `
+
+// Callback
+function esperar3s(callback: (dado: string) => void) {
+  setTimeout(() => {
+    callback('3s depois')
+  }, 3000)
+}
+
+esperar3s(function(resultado: string) {
+  console.log(resultado)
+})
+
+// Promise
+function esperar3sPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('3s depois')
+    }, 3000)
+  })
+}
+
+esperar3sPromise()
+.then(dado => console.log(dado))
+
+// Promise com fetch
+fetch('https://swapi.dev/api/people/1')
+.then(response => response.json())
+.then(personagem => personagem.films)
+.then(filmes => fetch(filmes[0]))
+.then(responseFilmes => responseFilmes.json())
+.then(filmes => console.log(filmes.title))
