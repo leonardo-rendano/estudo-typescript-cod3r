@@ -66,3 +66,7 @@ interface ABC extends A, B {
   // A interface ABC herdará as props das interfaces A e B e acrescentar a prop C
   c: () => void
 }
+
+const x = 2
+const y = 3
+const z = 4
